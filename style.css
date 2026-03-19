@@ -1,0 +1,284 @@
+/* Базовые сбросы и переменные */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover; /* Чтобы фото не искажалось */
+    border: 3px solid var(--accent-color);
+    box-shadow: var(--shadow);
+}
+
+/* На мобильных фото сверху */
+@media (max-width: 600px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* Контейнер для всего контента (как лист бумаги) */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Заголовки */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: #222;
+    margin-bottom: 0.2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0056b3; /* Акцентный цвет */
+    border-bottom: 3px solid #eaeaea;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+/* Убираем лишний отступ сверху у первого заголовка секции */
+section:first-of-type h2 {
+    margin-top: 0;
+}
+
+/* Стили для подзаголовков */
+.subhead {
+    font-size: 1.2rem;
+    color: #666;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.contacts li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #555;
+}
+
+/* Секция "О себе" */
+.about p {
+    font-size: 1.05rem;
+    color: #444;
+}
+
+/* Навыки (две колонки) */
+.skills-list {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap; /* Чтобы на узких экранах встало друг под другом */
+}
+
+.skills-list ul {
+    list-style: none;
+    flex: 1; /* Занимают равное пространство */
+    min-width: 200px; /* Минимальная ширина перед переносом */
+}
+
+.skills-list li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+/* Кастомные маркеры для списков */
+.skills-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #0056b3;
+    font-weight: bold;
+}
+
+/* Опыт работы */
+.job {
+    margin-bottom: 25px;
+}
+
+.job-title {
+    font-weight: 600;
+    font-size: 1.15rem;
+    margin-bottom: 5px;
+}
+
+.company {
+    font-weight: 400;
+    color: #0056b3;
+    font-style: italic;
+}
+
+.job-date {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.job ul {
+    list-style: none;
+}
+
+.job li {
+    margin-bottom: 5px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.job li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #0056b3;
+    font-weight: bold;
+}
+
+/* Образование и языки */
+.education p, .languages ul {
+    margin-bottom: 8px;
+}
+
+.languages ul {
+    list-style: none;
+}
+
+.languages li {
+    margin-bottom: 5px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.languages li::before {
+    content: "🌐";
+    position: absolute;
+    left: 0;
+    font-size: 0.9rem;
+}
+
+
+/* Адаптивность для мобильных */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .contacts ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .skills-list {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-logo-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-logo {
+    height: 35px;
+    width: auto;
+}
+
+.footer-name {
+    font-weight: 500;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 20px;
+}
+
+.social-link {
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 1.5rem;
+    transition: all 0.3s;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--bg-soft);
+}
+
+.social-link:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+    background-color: var(--bg-container);
+    box-shadow: 0 5px 15px rgba(0,86,179,0.2);
+}
+
+.footer-copyright {
+    font-size: 0.85rem;
+    color: var(--footer-text);
+    margin-top: 5px;
+}
